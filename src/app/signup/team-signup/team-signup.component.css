@@ -1,0 +1,11 @@
+span.addMember {
+  color: #28a745;
+}
+
+span.removeMember {
+  color: #dc3545;
+}
+
+.errorMark {
+  color: #ffc107;
+}

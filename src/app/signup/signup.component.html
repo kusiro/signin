@@ -1,0 +1,23 @@
+<form [formGroup]="typeForm">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="form-group">
+        <label for="signupType">報名表單</label>
+        <div class="btn-group input-group" ngbRadioGroup formControlName="signupType">
+          <!-- <label ngbButtonLabel class="btn-outline-dark leftMost">
+            <input ngbButton type="radio" value="individual">個人報名
+            <i class="fa fa-user" aria-hidden="true"></i>
+          </label> -->
+          <label ngbButtonLabel class="btn-outline-dark leftMost">
+            <input ngbButton type="radio" value="team">組隊報名
+            <i class="fa fa-users" aria-hidden="true"></i>
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+<div [ngSwitch]="typeForm.value['signupType']">
+  <app-team-signup [signupForm]="teamForm" *ngSwitchCase="'team'"></app-team-signup>
+  <!-- <app-individual-signup [signupForm]="individualForm" *ngSwitchCase="'individual'"></app-individual-signup> -->
+</div>

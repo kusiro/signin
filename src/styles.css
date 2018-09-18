@@ -1,0 +1,42 @@
+/* You can add global styles to this file, and also import other style files */
+@import url(//fonts.googleapis.com/earlyaccess/notosanstc.css);
+
+td {
+  vertical-align: middle !important;
+}
+
+* {
+  font-family: 'Noto Sans TC', sans-serif;  
+}
+
+input.ng-invalid.ng-dirty {
+  border-color: #d9534f;
+}
+
+select.ng-invalid.ng-dirty {
+  border-color: #d9534f;
+}
+
+input.ng-invalid.ng-touched {
+  border-color: #d9534f;
+}
+
+select.ng-invalid.ng-touched {
+  border-color: #d9534f;
+}
+
+input.ng-valid.ng-dirty {
+  border-color: #5cb85c;
+}
+
+select.ng-valid.ng-dirty {
+  border-color: #5cb85c;
+}
+
+.errorMsg {
+  color: #d9534f;
+}
+
+[ngbButtonLabel] {
+  width: 100%;
+}

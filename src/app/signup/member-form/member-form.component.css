@@ -1,0 +1,7 @@
+label[class*="btn-outline-"] {
+  border-left-width: 0px;
+}
+
+label[class*="leftMost"] {
+  border-left-width: 1px !important;
+}

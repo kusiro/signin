@@ -1,0 +1,15 @@
+<form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+  <app-member-form [form]="signupForm"></app-member-form>
+  <button
+    [disabled]="!canClear()"
+    class="btn btn-info"
+    type="button"
+    (click)="resetMember()">
+    清除資料
+  </button>
+  <button
+    class="btn btn-primary"
+    type="submit">
+    送出
+  </button>
+</form>

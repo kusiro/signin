@@ -1,0 +1,184 @@
+<div [formGroup]="form">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="form-group">
+        <label for="name">
+          姓名 <font class="errorMsg">{{ getErrorMsg('name') }}</font>
+        </label>
+        <input
+          formControlName="name"
+          type="text"
+          class="form-control">
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="form-group">
+        <label for="id">
+          身份證字號 <font class="errorMsg">{{ getErrorMsg('id') }}</font>
+        </label>
+        <input
+          formControlName="id"
+          type="text"
+          class="form-control">
+        <small id="idHelpBlock" class="form-text text-muted">
+          範例 : A123456789 (英文字母需大寫，外籍生請填居留證號)
+        </small>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="form-group">
+        <label for="gender">
+          性別 <font class="errorMsg">{{ getErrorMsg('gender') }}</font>
+        </label>
+        <div class="btn-group input-group" ngbRadioGroup formControlName="gender">
+          <label ngbButtonLabel class="btn-outline-primary leftMost">
+            <i class="fa fa-mars" aria-hidden="true"></i>
+            <input ngbButton type="radio" value="male">男
+          </label>
+          <label ngbButtonLabel class="btn-outline-danger">
+            <input ngbButton type="radio" value="female">女
+            <i class="fa fa-venus" aria-hidden="true"></i>
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="form-group">
+        <label for="birth">
+          生日 <font class="errorMsg">{{ getErrorMsg('birth') }}</font>
+        </label>
+        <input
+          formControlName="birth"
+          type="text"
+          class="form-control"
+          placeholder="YYYY/MM/DD">
+          <small id="birthHelpBlock" class="form-text text-muted">
+            範例 : 1995/09/06
+          </small>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="form-group">
+        <label for="school">
+          學校 <font class="errorMsg">{{ getErrorMsg('school') }}</font>
+        </label>
+        <input
+          formControlName="school"
+          type="text"
+          class="form-control">
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="form-group">
+        <label for="department">
+          科系 <font class="errorMsg">{{ getErrorMsg('department') }}</font>
+        </label>
+        <input
+          formControlName="department"
+          type="text"
+          class="form-control">
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-8">
+      <div class="form-group">
+        <label for="email">
+          Email <font class="errorMsg">{{ getErrorMsg('email') }}</font>
+        </label>
+        <input
+          formControlName="email"
+          type="text"
+          class="form-control">
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="form-group">
+        <label for="mobile">
+          手機 <font class="errorMsg">{{ getErrorMsg('mobile') }}</font>
+        </label>
+        <input
+          formControlName="mobile"
+          type="tel"
+          class="form-control">
+        <small id="mobileHelpBlock" class="form-text text-muted">
+          範例 : 0912345678
+        </small>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-8">
+      <div class="form-group">
+        <label for="size">
+          衣服尺寸 <app-size-info></app-size-info>
+          <font class="errorMsg">{{ getErrorMsg('size') }}</font>
+        </label>
+        <div class="btn-group input-group" ngbRadioGroup formControlName="size">
+          <label ngbButtonLabel class="btn-outline-info leftMost">
+            <input ngbButton type="radio" value="XS">XS
+          </label>
+          <label ngbButtonLabel class="btn-outline-info">
+            <input ngbButton type="radio" value="S">S
+          </label>
+          <label ngbButtonLabel class="btn-outline-info">
+            <input ngbButton type="radio" value="M">M
+          </label>
+          <label ngbButtonLabel class="btn-outline-info">
+            <input ngbButton type="radio" value="L">L
+          </label>
+          <label ngbButtonLabel class="btn-outline-info">
+            <input ngbButton type="radio" value="XL">XL
+          </label>
+          <label ngbButtonLabel class="btn-outline-info">
+            <input ngbButton type="radio" value="2L">2L
+          </label>
+          <label ngbButtonLabel class="btn-outline-info">
+            <input ngbButton type="radio" value="3L">3L
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="form-group">
+        <label for="food">
+          飲食 <font class="errorMsg">{{ getErrorMsg('food') }}</font>
+        </label>
+        <div class="btn-group input-group" ngbRadioGroup formControlName="food">
+          <label ngbButtonLabel class="btn-outline-warning leftMost">
+            <input ngbButton type="radio" value="non-vegetarian">葷
+          </label>
+          <label ngbButtonLabel class="btn-outline-warning">
+            <input ngbButton type="radio" value="vegetarian">素
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="expertise">
+      專長 <font class="errorMsg">{{ getErrorMsg('expertise') }}</font>
+    </label>
+    <input
+      formControlName="expertise"
+      type="text"
+      class="form-control">
+    <small id="expertiseHelpBlock" class="form-text text-muted">
+      範例 : C++ 簡報製作 專案管理 美術設計，若沒有請填「無」
+    </small>
+  </div>
+  <div class="form-group">
+    <label for="note">
+      備註 <font class="errorMsg">{{ getErrorMsg('note') }}</font>
+    </label>
+    <input
+      formControlName="note"
+      type="text"
+      class="form-control">
+    <small id="noteHelpBlock" class="form-text text-muted">
+      範例 : 蠶豆症 不吃牛肉 對磺胺類藥物過敏
+    </small>
+  </div>
+</div>
