@@ -8,33 +8,39 @@ import swal from 'sweetalert2';
 
 export class Member {
   static fieldName = {
+    // 'enterprise': '志願序',
     'name': '姓名',
     'id': '身份證字號',
     'gender': '性別',
     'birth': '生日',
     'school': '學校',
     'department': '科系',
+    'grade': '年級',
     'email': 'Email',
     'mobile': '手機',
     'size': '衣服尺寸',
     'food': '飲食',
     'expertise': '專長',
+    'previous': '過去經歷',
     'note': '備註'
   };
 
   static getNewForm(): FormGroup {
     return new FormGroup({
+      // 'enterprise': new FormControl(null, Validators.required),
       'name': new FormControl(null, Validators.required),
       'id': new FormControl(null, [Validators.required, Validators.pattern(/^[A-Z][12ABCD]\d{8}$/), Member.validID]),
       'gender': new FormControl(null, Validators.required),
       'birth': new FormControl(null, [Validators.required, Validators.pattern(/^\d{4}\/\d{2}\/\d{2}$/), Member.validDate]),
       'school': new FormControl(null, Validators.required),
       'department': new FormControl(null, Validators.required),
+      'grade': new FormControl(null, Validators.required),
       'email': new FormControl(null, [Validators.required, Validators.email]),
       'mobile': new FormControl(null, [Validators.required, Validators.pattern(/^\d{10}$/), Member.validPhone]),
       'size': new FormControl(null, Validators.required),
       'food': new FormControl(null, Validators.required),
       'expertise': new FormControl(null, Validators.required),
+      'previous': new FormControl(null, Validators.required),
       'note': new FormControl(null)
     });
   }

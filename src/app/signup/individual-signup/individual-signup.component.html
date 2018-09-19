@@ -1,4 +1,13 @@
 <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <label for="teamName">
+            隊名
+        </label>
+        <input
+        formControlName="teamName"
+        type="text"
+        class="form-control">
+    </div>
   <app-member-form [form]="signupForm"></app-member-form>
   <button
     [disabled]="!canClear()"

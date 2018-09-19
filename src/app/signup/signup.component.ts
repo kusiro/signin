@@ -10,7 +10,7 @@ import { Member } from './member';
 })
 export class SignupComponent implements OnInit {
   typeForm: FormGroup;
-  // individualForm: FormGroup;
+  individualForm: FormGroup;
   teamForm: FormGroup;
 
   constructor() { }
@@ -19,9 +19,10 @@ export class SignupComponent implements OnInit {
     this.typeForm = new FormGroup({
       'signupType': new FormControl('individual')
     });
-    // this.individualForm = Member.getNewForm();
+    this.individualForm = Member.getNewForm();
     this.teamForm = new FormGroup({
       'teamName': new FormControl(null, Validators.required),
+      'enterprise': new FormControl(null, Validators.required),
       'members': new FormArray([])
     });
     const members: FormArray = <FormArray>this.teamForm.get('members');

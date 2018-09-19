@@ -62,23 +62,43 @@
     <div class="col-md-4">
       <div class="form-group">
         <label for="school">
-          學校 <font class="errorMsg">{{ getErrorMsg('school') }}</font>
+          學校/公司 <font class="errorMsg">{{ getErrorMsg('school') }}</font>
         </label>
         <input
           formControlName="school"
           type="text"
           class="form-control">
+          <small id="idHelpBlock" class="form-text text-muted">
+            若為創客組請填「無」
+          </small>
       </div>
     </div>
     <div class="col-md-4">
       <div class="form-group">
         <label for="department">
-          科系 <font class="errorMsg">{{ getErrorMsg('department') }}</font>
+          科系/職稱 <font class="errorMsg">{{ getErrorMsg('department') }}</font>
         </label>
         <input
           formControlName="department"
           type="text"
           class="form-control">
+          <small id="idHelpBlock" class="form-text text-muted">
+            若為創客組請填「無」
+          </small>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="form-group">
+        <label for="grade">
+          年級 <font class="errorMsg">{{ getErrorMsg('grade') }}</font>
+        </label>
+        <input
+          formControlName="grade"
+          type="text"
+          class="form-control">
+          <small id="idHelpBlock" class="form-text text-muted">
+            若為創客組請填「無」
+          </small>
       </div>
     </div>
   </div>
@@ -167,6 +187,18 @@
       class="form-control">
     <small id="expertiseHelpBlock" class="form-text text-muted">
       範例 : C++ 簡報製作 專案管理 美術設計，若沒有請填「無」
+    </small>
+  </div>
+  <div class="form-group">
+    <label for="previous">
+      其他比賽經歷 <font class="errorMsg">{{ getErrorMsg('previous') }}</font>
+    </label>
+    <input
+      formControlName="previous"
+      type="text"
+      class="form-control">
+    <small id="noteHelpBlock" class="form-text text-muted">
+      範例 : 2017梅竹黑客松OO企業第一名，若沒有請填「無」
     </small>
   </div>
   <div class="form-group">

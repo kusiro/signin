@@ -43,25 +43,29 @@ export class TeamSignupComponent implements OnInit {
   }
 
   private generateRequest() {
-    const formUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSfIUf-2tN4JiAFy7gcMzzNWj89mYOXmwlgpDxqQE79-eC6xCQ/formResponse';
+    const formUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSetQpyRYv9rLgO6afBP3PWZyfso3vM6gjVhp8Fdt3PI5MfLEw/formResponse';
     const paramName = {
       'teamName': 'entry.1817158197',
+      'enterprise': 'entry.417990328',
       'name': 'entry.787550806',
       'id': 'entry.1296294427',
       'gender': 'entry.1174002852',
       'birth_year': 'entry.946359540_year',
       'birth_month': 'entry.946359540_month',
       'birth_day': 'entry.946359540_day',
-      'school': 'entry.1595484108',
-      'department': 'entry.1539280547',
+      'school': 'entry.1916847374',
+      'department': 'entry.1880160613',
+      'grade': 'entry.665767671',
       'email': 'entry.989797825',
       'mobile': 'entry.396932945',
       'size': 'entry.629237062',
       'food': 'entry.395245744',
       'expertise': 'entry.2123102593',
+      'previous': 'entry.1240534802',
       'note': 'entry.18030584'
     };
     const teamName = this.signupForm.value['teamName'];
+    const enterprise = this.signupForm.value['enterprise'];
     const data = [...this.signupForm.value['members']];
     for (const member of data) {
       member['teamName'] = teamName;
