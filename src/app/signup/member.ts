@@ -8,7 +8,6 @@ import swal from 'sweetalert2';
 
 export class Member {
   static fieldName = {
-    // 'enterprise': '志願序',
     'name': '姓名',
     'id': '身份證字號',
     'gender': '性別',
@@ -27,7 +26,6 @@ export class Member {
 
   static getNewForm(): FormGroup {
     return new FormGroup({
-      // 'enterprise': new FormControl(null, Validators.required),
       'name': new FormControl(null, Validators.required),
       'id': new FormControl(null, [Validators.required, Validators.pattern(/^[A-Z][12ABCD]\d{8}$/), Member.validID]),
       'gender': new FormControl(null, Validators.required),

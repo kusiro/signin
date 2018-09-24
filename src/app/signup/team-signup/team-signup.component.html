@@ -1,4 +1,5 @@
 <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+    <label>微軟組前兩名實習機會僅提供免履歷審查</label>
     <div class="form-group">
         <label for="teamName">
             隊名 <font class="errorMsg">{{ getErrorMsg('teamName') }}</font>
@@ -8,22 +9,18 @@
         type="text"
         class="form-control">
     </div>
-
     <label _ngcontent-c3="" for="enterprise">
         合作企業志願序
         <i _ngcontent-c3="" aria-hidden="true" class="fa fa-info-circle non-touch" ngbtooltip="企業資訊請參考官方網站" placement="top">
         </i>
         <font _ngcontent-c3="" class="errorMsg">必填</font>
     </label>
-    <div _ngcontent-c3="" class="form-row ng-untouched ng-pristine ng-invalid" formarrayname="enterprises">
+    <div class="form-row">
         <div _ngcontent-c3="" class="input-group col-md-2 form-group">
             <span _ngcontent-c3="" class="input-group-addon">1</span>
-            <select _ngcontent-c3="" class="form-control ng-untouched ng-pristine ng-invalid"  formControlName="enterprise" type="text">
+            <select _ngcontent-c3="" class="enter1 form-control ng-untouched ng-pristine ng-invalid"  formControlName="enterprise1" type="text">
                 <option _ngcontent-c3="" value="">
 
-                </option>
-                <option _ngcontent-c3="" value="創客組(新竹市政府)">
-                    創客組(新竹市政府)
                 </option>
                 <option _ngcontent-c3="" value="微軟">
                     微軟
@@ -41,7 +38,7 @@
         </div>
         <div _ngcontent-c3="" class="input-group col-md-2 form-group">
             <span _ngcontent-c3="" class="input-group-addon">2</span>
-            <select _ngcontent-c3="" class="form-control ng-untouched ng-pristine ng-invalid" formControlName="enterprise" type="text">
+            <select _ngcontent-c3="" class="enter2 form-control ng-untouched ng-pristine ng-invalid" formControlName="enterprise2" type="text">
                 <option _ngcontent-c3="" value="">
 
                 </option>
@@ -61,7 +58,7 @@
         </div>
         <div _ngcontent-c3="" class="input-group col-md-2 form-group">
             <span _ngcontent-c3="" class="input-group-addon">3</span>
-            <select _ngcontent-c3="" class="form-control ng-untouched ng-pristine ng-invalid" formControlName="enterprise" type="text">
+            <select _ngcontent-c3="" class="enter3 form-control ng-untouched ng-pristine ng-invalid" formControlName="enterprise3" type="text">
                 <option _ngcontent-c3="" value="">
 
                 </option>
@@ -81,7 +78,7 @@
         </div>
         <div _ngcontent-c3="" class="input-group col-md-2 form-group">
             <span _ngcontent-c3="" class="input-group-addon">4</span>
-            <select _ngcontent-c3="" class="form-control ng-untouched ng-pristine ng-invalid" formControlName="enterprise" type="text">
+            <select _ngcontent-c3="" class="enter4 form-control ng-untouched ng-pristine ng-invalid" formControlName="enterprise4" type="text">
                 <option _ngcontent-c3="" value="">
 
                 </option>
@@ -100,14 +97,17 @@
             </select>
         </div>
         <div _ngcontent-c3="" class="col-md-2">
-            <button _ngcontent-c3="" class="btn btn-info btn-block" type="button" disabled="">
-                清除重填
+            <button
+            class="btn btn-info"
+            type="button"
+            (click)="resetEnterprise()">
+            清除資料
             </button>
         </div>
     </div>
 
     <ul class="nav nav-tabs">
-    <li class="nav-item" *ngFor="let memberControl of signupForm.controls['members'].controls; let i = index">
+    <li class="nav-item" *ngFor="let memberControl of memberForm; let i = index">
         <a
         [style.color]="selectedMemberIndex === i ? '#495057' : '#007bff'"
         [style.cursor]="selectedMemberIndex === i ? 'default' : 'pointer'"
@@ -141,7 +141,7 @@
     </button>
 </ul>
 <div formArrayName="members" class="mt-4">
-    <div *ngFor="let memberControl of signupForm.controls['members'].controls; let i = index">
+    <div *ngFor="let memberControl of memberForm; let i = index">
         <div [formGroupName]="i" *ngIf="selectedMemberIndex === i">
             <app-member-form [form]="memberControl"></app-member-form>
         </div>
@@ -160,3 +160,8 @@ type="submit">
 送出
 </button>
 </form>
+
+<script type="text/javascript">
+
+
+</script>

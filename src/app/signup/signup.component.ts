@@ -22,7 +22,10 @@ export class SignupComponent implements OnInit {
     this.individualForm = Member.getNewForm();
     this.teamForm = new FormGroup({
       'teamName': new FormControl(null, Validators.required),
-      'enterprise': new FormControl(null, Validators.required),
+      'enterprise1': new FormControl(null),
+      'enterprise2': new FormControl(null),
+      'enterprise3': new FormControl(null),
+      'enterprise4': new FormControl(null),
       'members': new FormArray([])
     });
     const members: FormArray = <FormArray>this.teamForm.get('members');

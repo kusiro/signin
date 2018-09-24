@@ -5,11 +5,11 @@
         <label for="signupType">報名表單</label>
         <div class="btn-group input-group" ngbRadioGroup formControlName="signupType">
           <label ngbButtonLabel class="btn-outline-dark leftMost">
-            <input ngbButton type="radio" value="team1">創客組報名
+            <input ngbButton type="radio" value="individual">創客組報名
             <i class="fa fa-user" aria-hidden="true"></i>
           </label>
           <label ngbButtonLabel class="btn-outline-dark">
-            <input ngbButton type="radio" value="team2">黑客組報名
+            <input ngbButton type="radio" value="team">黑客組報名
             <i class="fa fa-users" aria-hidden="true"></i>
           </label>
         </div>
@@ -19,6 +19,6 @@
 </form>
 
 <div [ngSwitch]="typeForm.value['signupType']">
-    <app-team-signup [signupForm]="teamForm" *ngSwitchCase="'team1'"></app-team-signup>
-    <app-team-signup [signupForm]="teamForm" *ngSwitchCase="'team2'"></app-team-signup>
+    <app-individual-signup [signupForm]="teamForm" *ngSwitchCase="'individual'"></app-individual-signup>
+    <app-team-signup [signupForm]="teamForm" *ngSwitchCase="'team'"></app-team-signup>
 </div>

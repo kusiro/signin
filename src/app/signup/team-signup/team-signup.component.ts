@@ -7,7 +7,6 @@ import swal from 'sweetalert2';
 
 import { SignupService } from '../signup.service';
 import { Member } from '../member';
-
 @Component({
   selector: 'app-team-signup',
   templateUrl: './team-signup.component.html',
@@ -21,6 +20,10 @@ export class TeamSignupComponent implements OnInit {
 
   ngOnInit() {
     this.selectedMemberIndex = 0;
+  }
+
+  get memberForm() {
+    return (this.signupForm.controls['members'] as FormGroup).controls;
   }
 
   private memberAlert(): void {
@@ -46,10 +49,13 @@ export class TeamSignupComponent implements OnInit {
     const formUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSetQpyRYv9rLgO6afBP3PWZyfso3vM6gjVhp8Fdt3PI5MfLEw/formResponse';
     const paramName = {
       'teamName': 'entry.1817158197',
-      'enterprise': 'entry.417990328',
+      'enterprise1': 'entry.417990328',
+      'enterprise2': 'entry.69160782',
+      'enterprise3': 'entry.1037936585',
+      'enterprise4': 'entry.2101857576',
       'name': 'entry.787550806',
-      'id': 'entry.1296294427',
-      'gender': 'entry.1174002852',
+      'id': 'entry.315265884',
+      'gender': 'entry.1870258025',
       'birth_year': 'entry.946359540_year',
       'birth_month': 'entry.946359540_month',
       'birth_day': 'entry.946359540_day',
@@ -57,18 +63,26 @@ export class TeamSignupComponent implements OnInit {
       'department': 'entry.1880160613',
       'grade': 'entry.665767671',
       'email': 'entry.989797825',
-      'mobile': 'entry.396932945',
-      'size': 'entry.629237062',
-      'food': 'entry.395245744',
+      'mobile': 'entry.1626747519',
+      'size': 'entry.1151430331',
+      'food': 'entry.583333446',
       'expertise': 'entry.2123102593',
       'previous': 'entry.1240534802',
       'note': 'entry.18030584'
     };
     const teamName = this.signupForm.value['teamName'];
-    const enterprise = this.signupForm.value['enterprise'];
+    const enterprise1 = this.signupForm.value['enterprise1'];
+    const enterprise2 = this.signupForm.value['enterprise2'];
+    const enterprise3 = this.signupForm.value['enterprise3'];
+    const enterprise4 = this.signupForm.value['enterprise4'];
     const data = [...this.signupForm.value['members']];
     for (const member of data) {
       member['teamName'] = teamName;
+      member['enterprise1'] = enterprise1;
+      member['enterprise2'] = enterprise2;
+      member['enterprise3'] = enterprise3;
+      member['enterprise4'] = enterprise4;
+
     }
 
     const requests = data.map(memberData => this.signup.generateRequest(formUrl, paramName, memberData));
@@ -95,6 +109,12 @@ export class TeamSignupComponent implements OnInit {
   resetMember() {
     const members: FormArray = <FormArray>this.signupForm.get('members');
     members.controls[this.selectedMemberIndex].reset();
+  }
+  resetEnterprise() {
+      this.signupForm.controls.enterprise1.reset();
+      this.signupForm.controls.enterprise2.reset();
+      this.signupForm.controls.enterprise3.reset();
+      this.signupForm.controls.enterprise4.reset();
   }
 
   private markDirty(): void {

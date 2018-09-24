@@ -70,7 +70,7 @@ export class SignupService {
         allowOutsideClick: false
       })
       .then(() => {
-        // location.href = 'http://2017.hackathon.nctu.me';
+        location.href = 'http://hackathon.nctu.me/2018';
       });
     })
     .catch(swal.noop);
